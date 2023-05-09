@@ -1,0 +1,74 @@
+/* Avenir Next Cyr */
+
+/* AvenirNextCyr - 300 */
+@font-face {
+    font-family: 'AvenirNextCyr';
+    /* -- Internet Explorer 9 -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Light.eot') format('eot');
+    /* -- Internet Explorer IE6-IE8 -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Light.eot') format('embedded-opentype'),
+    url('../fonts/AvenirNextCyr/AvenirNextCyr-Light.ttf') format('truetype');
+    /* -- Для сучайсних браузерів Modern Browser -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Light.woff') format('woff'),
+    url('../fonts/AvenirNextCyr/AvenirNextCyr-Light.woff2') format('woff2');
+    font-weight: 300;
+}
+
+/* AvenirNextCyr - 400 */
+@font-face {
+    font-family: 'AvenirNextCyr';
+    /* -- Internet Explorer 9 -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Regular.eot') format('eot');
+    /* -- Internet Explorer IE6-IE8 -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Regular.eot') format('embedded-opentype'),
+    url('../fonts/AvenirNextCyr/AvenirNextCyr-Regular.ttf') format('truetype');
+    /* -- Для сучайсних браузерів Modern Browser -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Regular.woff') format('woff'),
+    url('../fonts/AvenirNextCyr/AvenirNextCyr-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+/* AvenirNextCyr - 500 */
+@font-face {
+    font-family: 'AvenirNextCyr';
+    /* -- Internet Explorer 9 -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Medium.eot') format('eot');
+    /* -- Internet Explorer IE6-IE8 -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Medium.eot') format('embedded-opentype'),
+    url('../fonts/AvenirNextCyr/AvenirNextCyr-Medium.ttf') format('truetype');
+    /* -- Для сучайсних браузерів Modern Browser -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Medium.woff') format('woff'),
+    url('../fonts/AvenirNextCyr/AvenirNextCyr-Medium.woff2') format('woff2');
+    font-weight: 500;
+}
+
+/* AvenirNextCyr - 600 */
+@font-face {
+    font-family: 'AvenirNextCyr';
+    /* -- Internet Explorer 9 -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Demi.eot') format('eot');
+    /* -- Internet Explorer IE6-IE8 -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Demi.eot') format('embedded-opentype'),
+    url('../fonts/AvenirNextCyr/AvenirNextCyr-Demi.ttf') format('truetype');
+    /* -- Для сучайсних браузерів Modern Browser -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Demi.woff') format('woff'),
+    url('../fonts/AvenirNextCyr/AvenirNextCyr-Demi.woff2') format('woff2');
+    font-weight: 600;
+}
+
+/* AvenirNextCyr - 700 */
+@font-face {
+    font-family: 'AvenirNextCyr';
+    /* -- Internet Explorer 9 -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Bold.eot') format('eot');
+    /* -- Internet Explorer IE6-IE8 -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Bold.eot') format('embedded-opentype'),
+    url('../fonts/AvenirNextCyr/AvenirNextCyr-Bold.ttf') format('truetype');
+    /* -- Для сучайсних браузерів Modern Browser -- */
+    src: url('../fonts/AvenirNextCyr/AvenirNextCyr-Bold.woff') format('woff'),
+    url('../fonts/AvenirNextCyr/AvenirNextCyr-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
+
+
+
