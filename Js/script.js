@@ -97,6 +97,19 @@ scrollDown.addEventListener('click', () => {
 });
 
 
+// scroll__up
+
+const scrollUp = document.querySelector('.scroll__up');
+const sectionCubax = document.querySelector('.section__cubax');
+
+scrollUp.addEventListener('click', () => {
+    sectionCubax.scrollIntoView({
+        behavior: "smooth",
+    });
+});
+
+
+
 // QUESTION - Accordion
 
 // Отримуємо доступ до селекторів елементів які нам потрібні!
@@ -139,6 +152,9 @@ for (let i = 0; i < questionButtons.length; i++) {
         prevText = qText;
     });
 }
+
+
+
 
 
 
