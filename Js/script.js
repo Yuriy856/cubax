@@ -153,10 +153,37 @@ for (let i = 0; i < questionButtons.length; i++) {
     });
 }
 
+// function pow(x, n) {
+//     if (n < 0) return NaN;
+//     if (Math.round(n) != n) return NaN;
+
+//     let result = 1;
+
+//     for (let i = 0; i < n; i++) {
+//         result *= x;
+//     }
+
+//     return result;
+// }
 
 
+// console.log(pow(3, 4.1));
 
+// POPUP ANIMATION
 
+const buttonsFeedback = document.querySelectorAll('.button__feedback');
+const popupClose = document.querySelector('.popup__close');
+const popupFeedBack = document.querySelector('.popup');
+
+for (let i = 0; i < buttonsFeedback.length; i++) {
+    buttonsFeedback[i].addEventListener('click', () => {
+        popupFeedBack.classList.add('popup__active');
+    })
+}
+
+popupClose.addEventListener('click', () => {
+    popupFeedBack.classList.remove('popup__active');
+})
 
 
 

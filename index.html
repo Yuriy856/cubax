@@ -78,6 +78,42 @@
 
     <!-- MAIN -->
     <main class="main">
+
+        <div class="popup">
+            <div class="popup__content">
+                <div class="popup__block">
+                    <img class="popup__flora1" src="img/flora-1.png" alt="flora">
+                    <img class="popup__flora2" src="img/flora-2.png" alt="flora">
+                    <button class="popup__close">
+                        <img src="img/popup__close.svg" alt="popup__close">
+                    </button>
+                    <div class="popup__info">
+                        <h2 class="popup__title">
+                            <span>Оставьте заявку</span>
+                            и наши менеджеры свяжутся
+                            с вами в ближайшее время
+                        </h2>
+                        <form class="popup__form" action="#" method="post">
+                            <div class="name__input">
+                                <input type="text" placeholder="Ваше имя">
+                            </div>
+                            <div class="number__input">
+                                <input type="tel" name="user-tel" placeholder="Контактный номер телефона">
+                            </div>
+                            <div class="checkbox__input">
+                                <label for="checkbox">
+                                    <input id="checkbox" type="checkbox" name="checkbox" checked>
+                                    <span class="check__style"></span>
+                                    Даю согласие на обработку персональных данных
+                                </label>
+                            </div>
+                            <button class="popup__button btn">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- section__cubax -->
         <section class="section__cubax">
             <!-- Background Cubax -->
@@ -105,7 +141,7 @@
                                 осуществляется доставка на участок и сборка.
                             </p>
                         </div>
-                        <button class="technology__btn">
+                        <button class="technology__btn button__feedback">
                             <span>Оставить заявку</span>
                         </button>
                     </div>
@@ -291,7 +327,7 @@
                             <span>Найдите свой идеальный CUBAX</span>
                             Площадь, форма, отделка — будьте свободны в своем выборе
                         </h3>
-                        <button class="info-btn btn">
+                        <button class="info-btn btn button__feedback">
                             <span>Посмотреть все проекты</span>
                         </button>
                     </div>
@@ -404,7 +440,7 @@
                     </ul>
                     <h3 class="benefits__subtitle">Строительство может быть <span>в удовольствие вместе с CUBAX.</span>
                     </h3>
-                    <div class="benefits__btn btn">
+                    <div class="benefits__btn btn button__feedback">
                         <span>Связаться с нами</span>
                     </div>
                 </div>
@@ -464,7 +500,7 @@
                         <div class="round__block">
                             <h3 class="round__title title"><span>Постройте свой дом</span> с удовольствием и без забот
                             </h3>
-                            <button class="round__btn btn">Получить консультацию</button>
+                            <button class="round__btn btn button__feedback">Получить консультацию</button>
                             <span class="round__cover"></span>
                         </div>
                     </div>
@@ -598,7 +634,7 @@
                             </li>
                         </ul>
                         <div class="block__button">
-                            <button class="question__btn btn">
+                            <button class="question__btn btn button__feedback">
                                 <span>Задать свой вопрос</span>
                             </button>
                         </div>
@@ -620,7 +656,7 @@
                                 <span>Наслаждайтесь</span> процессом строительства так же как и
                                 <span>проживанием вместе с CUBAX</span>
                             </h2>
-                            <button class="callback__button btn">
+                            <button class="callback__button btn button__feedback">
                                 <span>Получить консультацию</span>
                             </button>
                             <span class="callback__cover"></span>
@@ -638,7 +674,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- FOOTER -->
         <footer class="footer">
             <div class="container">
