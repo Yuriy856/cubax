@@ -55,10 +55,10 @@ new Swiper('.swiper', {
         prevEl: '.swiper-button-prev'
     },
 
-    // Scroll mouse
-    mousewheel: {
-        sensitivity: 1,
-    },
+    // // Scroll mouse
+    // mousewheel: {
+    //     sensitivity: 1,
+    // },
 
     // Кількість слайдів
     slidesPerView: 2,
@@ -153,106 +153,85 @@ for (let i = 0; i < questionButtons.length; i++) {
     });
 }
 
-// function pow(x, n) {
-//     if (n < 0) return NaN;
-//     if (Math.round(n) != n) return NaN;
-
-//     let result = 1;
-
-//     for (let i = 0; i < n; i++) {
-//         result *= x;
-//     }
-
-//     return result;
-// }
-
-
-// console.log(pow(3, 4.1));
-
 // POPUP ANIMATION
 
+// Зберігаємо посилання в змінну
 const buttonsFeedback = document.querySelectorAll('.button__feedback');
 const popupClose = document.querySelector('.popup__close');
 const popupFeedBack = document.querySelector('.popup');
+const body = document.querySelector('body');
+const headerElement = document.querySelector('.header');
+
+let transitionendHandler = () => {
+    body.style.overflow = "";
+    body.style.paddingRight = "";
+    headerElement.style.paddingRight = "";
+    console.log('good');
+    popupFeedBack.removeEventListener('transitionend', transitionendHandler);
+}
 
 for (let i = 0; i < buttonsFeedback.length; i++) {
     buttonsFeedback[i].addEventListener('click', () => {
         popupFeedBack.classList.add('popup__active');
-    })
+
+        // блокування scroll
+        body.style.overflow = "hidden";
+        body.style.paddingRight = "17px";
+        headerElement.style.paddingRight = "17px";
+    });
 }
 
 popupClose.addEventListener('click', () => {
     popupFeedBack.classList.remove('popup__active');
+    popupFeedBack.addEventListener('transitionend', transitionendHandler);
+});
+
+
+// popup__house
+
+const popupHouse = document.querySelector('.popup__house');
+const houseBlock = document.querySelector('.house__block');
+const houseClose = document.querySelector('.house__close');
+const projectsSlidBtn = document.querySelectorAll('.projects__slid-btn');
+
+for (let i = 0; i < projectsSlidBtn.length; i++) {
+    projectsSlidBtn[i].addEventListener('click', () => {
+
+        popupHouse.classList.add('popup__house-active');
+
+        let scrollPositon = window.pageYOffset;
+        console.log(scrollPositon);
+        popupHouse.style.top = `${scrollPositon}px`;
+
+        let popupHouseHeight =  popupHouse.clientHeight;
+        // body.style.height = `${popupHouseHeight}px`;
+        console.log(popupHouseHeight);
+
+        let bodyTop = -parseInt(scrollPositon)
+        body.style.top = `-${bodyTop}px`;
+        let bodyBottom = -parseInt(popupHouseHeight);
+
+        body.style.bottom = `-${bodyBottom}px`;
+        console.log(bodyTop);
+
+
+        // body.style.overflow = "hidden";
+        
+
+
+    })
+}
+
+houseClose.addEventListener('click', () => {
+    popupHouse.classList.remove('popup__house-active');
+    let scrollPositon = window.pageYOffset;
+    body.style.top = `-${scrollPositon}`;
 })
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Потрібно спробувати створити масив який буде містити активовані елементи!
-
-
-
-// const questioBtns = document.getElementsByClassName("question__button");
-
-// for (let i = 0; i < questioBtns.length; i++) {
-
-//     questioBtns[i].addEventListener("click", function () {
-
-//         this.classList.toggle("active");
-
-//         let panel = this.nextElementSibling;
-
-//         if (panel.style.maxHeight) {
-//             panel.style.maxHeight = null;
-//         } else {
-//             panel.style.maxHeight = (panel.scrollHeight * 3) + "px";
-//         }
-//     });
-// }
-
-
-
-// let questioBtnsActive = document.getElementsByClassName(".question__button .active");
-// questioBtnsActive.addEventListener('click', () => {
-//     console.log(questioBtnsActive);
-// })
-
-
-
 
 
 
@@ -288,3 +267,4 @@ popupClose.addEventListener('click', () => {
 //   () => alert("Ви погодились."),
 //   () => alert("Ви скасували виконання.")
 // );
+
