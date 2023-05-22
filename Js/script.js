@@ -24,24 +24,24 @@ window.addEventListener('scroll', () => {
  Використовуючи ці значення можна визначити положення та розмір елемента на сторінці.
 */
 
-const darkBlocks = document.querySelectorAll('._dark');
+// const darkBlocks = document.querySelectorAll('._dark');
 
-window.addEventListener('scroll', function () {
-    let isIntersecting = false;
-    for (let i = 0; i < darkBlocks.length; i++) {
-        if (darkBlocks[i].getBoundingClientRect().bottom >= header.getBoundingClientRect().top
-            && darkBlocks[i].getBoundingClientRect().top <= header.getBoundingClientRect().bottom) {
-            isIntersecting = true;
-            break;
-        }
-    }
+// window.addEventListener('scroll', function () {
+//     let isIntersecting = false;
+//     for (let i = 0; i < darkBlocks.length; i++) {
+//         if (darkBlocks[i].getBoundingClientRect().bottom >= header.getBoundingClientRect().top
+//             && darkBlocks[i].getBoundingClientRect().top <= header.getBoundingClientRect().bottom) {
+//             isIntersecting = true;
+//             break;
+//         }
+//     }
 
-    if (isIntersecting) {
-        header.classList.add('header--light');
-    } else {
-        header.classList.remove('header--light');
-    }
-});
+//     if (isIntersecting) {
+//         header.classList.add('header--light');
+//     } else {
+//         header.classList.remove('header--light');
+//     }
+// });
 
 
 
@@ -203,7 +203,7 @@ for (let i = 0; i < projectsSlidBtn.length; i++) {
         console.log(scrollPositon);
         popupHouse.style.top = `${scrollPositon}px`;
 
-        let popupHouseHeight =  popupHouse.clientHeight;
+        let popupHouseHeight = popupHouse.clientHeight;
         // body.style.height = `${popupHouseHeight}px`;
         console.log(popupHouseHeight);
 
@@ -214,11 +214,8 @@ for (let i = 0; i < projectsSlidBtn.length; i++) {
         body.style.bottom = `-${bodyBottom}px`;
         console.log(bodyTop);
 
-
+        popupHouse.style.overflow = "auto";
         // body.style.overflow = "hidden";
-        
-
-
     })
 }
 
@@ -226,6 +223,22 @@ houseClose.addEventListener('click', () => {
     popupHouse.classList.remove('popup__house-active');
     let scrollPositon = window.pageYOffset;
     body.style.top = `-${scrollPositon}`;
+
+    body.style.overflow = "";
+    popupHouse.style.overflow = "auto";
+})
+
+
+
+// HEADER BURGER 
+
+const burger = document.querySelector('.burger');
+const headerMobile = document.querySelector('.header__menu-mobile');
+
+burger.addEventListener('click', () => {
+    headerMobile.classList.toggle('menu__active');
+
+    burger.classList.toggle('burger__step1');
 })
 
 
@@ -268,3 +281,26 @@ houseClose.addEventListener('click', () => {
 //   () => alert("Ви скасували виконання.")
 // );
 
+
+
+
+
+let ladder = {
+    step: 0,
+    up() {
+        this.step++;
+        this.showStep();
+    },
+    down() {
+        this.step--;
+        this.showStep();
+
+    },
+    showStep: function () { // показує поточний крок
+        console.log(this.step);
+        this.up();
+        this.down();
+    }
+};
+
+ladder.up().up().down().showStep().down().showStep();
