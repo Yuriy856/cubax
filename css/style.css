@@ -2499,6 +2499,10 @@ header {
         left: -159px;
         bottom: 71px;
     }
+
+    .header_menu {
+        gap: 20px;
+    }
 }
 
 
@@ -2632,21 +2636,21 @@ header {
         justify-content: center;
     }
 
-
     .technology__home .home { 
-        width: 600px;
+        width: 600px;         
+        left: 38px;
     }
 
     .technology__home .construction-crane {
         top: -199px;
-        left: 120px;
+        left: 173px;
         width: 350px;
     }
 
     .technology__home .home-clouds {
         width: 800px;
-        left: -121px;
-        bottom: -15px;
+        left: -74px;
+        bottom: -14px;
     }
 }
 
@@ -2674,14 +2678,14 @@ header {
 
     .technology__home .construction-crane {
         top: -136px;
-        left: 130px;
+        left: 166px;
         width: 250px;
     }
 
     .technology__home .home-clouds {
         width: 600px;
-        left: -72px;
-        bottom: -1px;
+        left: -46px;
+        bottom: 8px;
     }
 }
 
@@ -2767,13 +2771,13 @@ header {
     .technology__home .construction-crane {
         width: 193px;
         top: -108px;
-        left: 62px;
+        left: 98px;
     }
 
     .technology__home .home-clouds {
         width: 400px;
-        left: -80px;
-        bottom: -5px;
+        left: -28px;
+        bottom: 1px;
     }
 
     .technology__bottom {
