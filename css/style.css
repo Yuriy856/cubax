@@ -2441,7 +2441,6 @@ header {
 
 
 
-.cudax__projects,
 .cubax__equipment,
 .cubax__benefits,
 .cubax__stages,
@@ -3141,7 +3140,7 @@ header {
 
     .walls__circle-3::after {
         top: 116px;
-        right: -115px;
+        right: -116px;
         width: 201px;
         transform: rotate(75deg);
     }
