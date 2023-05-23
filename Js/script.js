@@ -173,11 +173,7 @@ let transitionendHandler = () => {
 for (let i = 0; i < buttonsFeedback.length; i++) {
     buttonsFeedback[i].addEventListener('click', () => {
         popupFeedBack.classList.add('popup__active');
-
-        // блокування scroll
-        body.style.overflow = "hidden";
-        body.style.paddingRight = "17px";
-        headerElement.style.paddingRight = "17px";
+        bodyLock();
     });
 }
 
@@ -185,6 +181,26 @@ popupClose.addEventListener('click', () => {
     popupFeedBack.classList.remove('popup__active');
     popupFeedBack.addEventListener('transitionend', transitionendHandler);
 });
+
+/* 
+    Властивість innerWidth є частиною об'єкту window в браузерному середовищі JavaScript. 
+    Вона повертає ширину видимої області перегляду (viewport) веб-сторінки в пікселях, 
+    з урахуванням панелей прокрутки і інших елементів браузера якщо вони є.
+*/
+
+function bodyLock() {
+    const currentWidth = window.innerWidth - document.querySelector('.main').offsetWidth;
+
+    // console.log(`Ширина області перегляду: ${window.innerWidth}px`);
+    // console.log(`Ширина елемента main: ${document.querySelector('.main').offsetWidth}px`);
+
+    body.style.paddingRight = currentWidth + "px";
+    headerElement.style.paddingRight = currentWidth + "px";
+
+    body.style.overflow = "hidden";
+}
+
+
 
 
 // popup__house
@@ -285,22 +301,39 @@ burger.addEventListener('click', () => {
 
 
 
-let ladder = {
-    step: 0,
-    up() {
-        this.step++;
-        this.showStep();
-    },
-    down() {
-        this.step--;
-        this.showStep();
+// let ladder = {
+//     step: 0,
+//     up() {
+//         this.step++;
+//         this.showStep();
+//     },
+//     down() {
+//         this.step--;
+//         this.showStep();
 
-    },
-    showStep: function () { // показує поточний крок
-        console.log(this.step);
-        this.up();
-        this.down();
-    }
-};
+//     },
+//     showStep: function () { // показує поточний крок
+//         console.log(this.step);
+//         this.up();
+//         this.down();
+//     }
+// };
 
-ladder.up().up().down().showStep().down().showStep();
+// ladder.up().up().down().showStep().down().showStep();
+
+
+
+
+function sayHi() {
+    console.log("Hello");
+}
+
+sayHi();
+
+
+
+
+
+// while (i < 5) {
+//     console.log("Hello");
+// }

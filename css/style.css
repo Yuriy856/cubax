@@ -175,7 +175,7 @@ header {
 .popup__block {
     position: relative;
     transform: scale(0);
-    transition: .32s ease-in-out;
+    transition: .32s ease-in-out; 
 }
 
 .popup__close {
@@ -196,9 +196,6 @@ header {
     transform: scale(1);
 }
 
-.popup__close img {
-    transform: translate(-50%, -50%);
-}
 
 .popup__block img {
     position: absolute;
@@ -208,11 +205,39 @@ header {
 .popup__flora1 {
     top: -17%;
     left: -42%;
+    animation: floraLeft 2s infinite alternate ease-in-out;
 }
+
+@keyframes floraLeft {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+    0% {
+        transform: translateY(0);
+    }
+}
+
+
 
 .popup__flora2 {
     top: 16%;
     right: -35%;
+    animation: floraRight 2s infinite alternate ease-in-out;
+}
+
+@keyframes floraRight {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+    0% {
+        transform: translateY(0);
+    }
 }
 
 .popup__info {
@@ -2426,7 +2451,7 @@ header {
 .cubax__callback,
 .footer,
 .technology__bottom,
-.popup,
+/* .popup, */
 .popup__house {
     display: none;
 }
@@ -2491,17 +2516,29 @@ header {
         left: -159px;
         bottom: 12px;
     }
+
+    .cubax__technology {
+        gap: 20px;
+    }
 }
 
 @media (max-width: 1240px) {
     .technology__home .home-clouds {
         width: 700px;
         left: -159px;
-        bottom: 71px;
+        bottom: 20px;
     }
 
     .header_menu {
         gap: 20px;
+    }
+}
+
+@media (max-width: 1207px) {
+    .technology__home .home-clouds {
+        width: 700px;
+        left: -159px;
+        bottom: 66px;
     }
 }
 
@@ -2652,6 +2689,21 @@ header {
         left: -74px;
         bottom: -14px;
     }
+
+    .popup__info {
+        padding: 104px 73px 67px;
+        width: 600px;
+        height: 600px;
+    }
+    
+    .popup__info::after {
+        width: 640px;
+        height: 640px;
+    }
+
+    .popup__title {
+        font-size: 22px;
+    }
 }
 
 @media (max-width: 750px) {
@@ -2687,6 +2739,44 @@ header {
         left: -46px;
         bottom: 8px;
     }
+
+    .popup__info {
+        padding: 80px 73px 67px;
+        width: 500px;
+        height: 500px;
+    }
+    
+    .popup__info::after {
+        width: 540px;
+        height: 540px;
+    }
+
+    .popup__form {
+        margin: 30px 0 0;
+    }
+
+    .popup__title {
+        font-size: 20px;
+    }
+
+    .popup__form input[type="text"], input[type="tel"] {
+        padding: 0px 30px 14px 0;
+    }
+    
+    .checkbox__input {
+        margin-top: 5px;
+    }
+
+    .popup__flora1 {
+        top: -38%;
+        left: -51%;
+    }
+
+    .popup__flora2 {
+        top: 14%;
+        right: -47%;
+    }
+
 }
 
 @media (max-width: 632px) {
@@ -2719,7 +2809,65 @@ header {
         max-width: 100%;
         padding: 31px 17px 29px 28px;
     }
+
+    .popup__info {
+        padding: 130px 120px 67px;
+        width: 600px;
+        height: 600px;
+    }
+
+    .popup__info::after {
+        width: 640px;
+        height: 640px;
+    }
+
+    .popup__close {
+        top: 78px;
+        right: 124px;
+        z-index: 100;
+        width: 25px;
+        height: 25px; 
+    }
+
+    .popup__close svg {
+        width: inherit;
+        height: inherit;        
+    }
+
+    .popup__close svg path{
+        stroke: #000;
+    }
+
+    .popup__form {
+        width: 100%;
+        margin: 30px auto 0;
+    }
+
+    .popup__flora2 {
+        top: 32%;
+        right: -44%;
+    }
 }
+
+@media (max-width: 400px) {
+    .popup__info {
+        padding: 130px 155px 67px;
+    }
+
+    .popup__title {
+        font-size: 16px;
+    }
+
+    .popup__form input[type="text"], input[type="tel"] {
+        font-size: 14px;
+    }
+
+    .popup__close {
+        top: 78px;
+        right: 140px;
+    }
+}
+
 
 @media (max-width: 360px) {
     .section__cubax {
@@ -2811,6 +2959,15 @@ header {
     
     .cubax__text {
         display: none;
+    }
+    
+    .technology__bottom {
+        display: block;
+    }
+
+    .popup__close {
+        top: 78px;
+        right: 150px;
     }
 }
 
