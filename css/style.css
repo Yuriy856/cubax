@@ -3147,14 +3147,14 @@ header {
 
     .walls__circle-2::after {
         top: 112px;
-        right: -23px;
+        right: -22px;
         width: 252px;
         transform: rotate(313deg);
     }
 
     .walls__circle-1::after {
         top: 109px;
-        right: -17px;
+        right: -15px;
         width: 273px;
         transform: rotate(319deg);
     }
