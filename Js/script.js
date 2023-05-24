@@ -47,36 +47,72 @@ window.addEventListener('scroll', () => {
 
 // PROJECTS SLIDER
 
-new Swiper('.swiper', {
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 560) {
+        // console.log(window.innerWidth);
+        new Swiper('.swiper', {
 
-    // Підключення стрілок
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-    },
+            // Підключення стрілок
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+        
+            // // Scroll mouse
+            // mousewheel: {
+            //     sensitivity: 1,
+            // },
+        
+            // Кількість слайдів
+            slidesPerView: 1,
+        
+            // Відстань між слайдами
+            spaceBetween: 20,
+        
+            // Швидкість зміни слайдів
+            speed: 400,
+        
+            // // slidesPerGroup: 2,
+        
+            // // Індекс слайду для перегляду
+            // initialSlide: 1,
+        
+            // // Центрування слайду
+            // centeredSlides: true,
+        });
+    } else {
+        new Swiper('.swiper', {
 
-    // // Scroll mouse
-    // mousewheel: {
-    //     sensitivity: 1,
-    // },
-
-    // Кількість слайдів
-    slidesPerView: 2,
-
-    // Відстань між слайдами
-    spaceBetween: 20,
-
-    // Швидкість зміни слайдів
-    speed: 400,
-
-    // slidesPerGroup: 2,
-
-    // // Індекс слайду для перегляду
-    // initialSlide: 1,
-
-    // // Центрування слайду
-    // centeredSlides: true,
-});
+            // Підключення стрілок
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+        
+            // // Scroll mouse
+            // mousewheel: {
+            //     sensitivity: 1,
+            // },
+        
+            // Кількість слайдів
+            slidesPerView: 2,
+        
+            // Відстань між слайдами
+            spaceBetween: 20,
+        
+            // Швидкість зміни слайдів
+            speed: 400,
+        
+            // slidesPerGroup: 2,
+        
+            // // Індекс слайду для перегляду
+            // initialSlide: 1,
+        
+            // // Центрування слайду
+            // centeredSlides: true,
+        });
+    }
+})
 
 // FANCYBOX
 
