@@ -47,6 +47,37 @@ window.addEventListener('scroll', () => {
 
 // PROJECTS SLIDER
 
+new Swiper('.swiper', {
+
+    // Підключення стрілок
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    },
+
+    // // Scroll mouse
+    // mousewheel: {
+    //     sensitivity: 1,
+    // },
+
+    // Кількість слайдів
+    slidesPerView: 2,
+
+    // Відстань між слайдами
+    spaceBetween: 20,
+
+    // Швидкість зміни слайдів
+    speed: 400,
+
+    // slidesPerGroup: 2,
+
+    // // Індекс слайду для перегляду
+    // initialSlide: 1,
+
+    // // Центрування слайду
+    // centeredSlides: true,
+});
+
 window.addEventListener('resize', () => {
     if (window.innerWidth <= 560) {
         // console.log(window.innerWidth);
@@ -80,6 +111,7 @@ window.addEventListener('resize', () => {
             // // Центрування слайду
             // centeredSlides: true,
         });
+        
     } else {
         new Swiper('.swiper', {
 
@@ -89,11 +121,6 @@ window.addEventListener('resize', () => {
                 prevEl: '.swiper-button-prev'
             },
         
-            // // Scroll mouse
-            // mousewheel: {
-            //     sensitivity: 1,
-            // },
-        
             // Кількість слайдів
             slidesPerView: 2,
         
@@ -102,14 +129,6 @@ window.addEventListener('resize', () => {
         
             // Швидкість зміни слайдів
             speed: 400,
-        
-            // slidesPerGroup: 2,
-        
-            // // Індекс слайду для перегляду
-            // initialSlide: 1,
-        
-            // // Центрування слайду
-            // centeredSlides: true,
         });
     }
 })
@@ -252,22 +271,27 @@ for (let i = 0; i < projectsSlidBtn.length; i++) {
         popupHouse.classList.add('popup__house-active');
 
         let scrollPositon = window.pageYOffset;
-        console.log(scrollPositon);
         popupHouse.style.top = `${scrollPositon}px`;
 
         let popupHouseHeight = popupHouse.clientHeight;
         // body.style.height = `${popupHouseHeight}px`;
-        console.log(popupHouseHeight);
 
         let bodyTop = -parseInt(scrollPositon)
         body.style.top = `-${bodyTop}px`;
         let bodyBottom = -parseInt(popupHouseHeight);
 
         body.style.bottom = `-${bodyBottom}px`;
-        console.log(bodyTop);
+
+        let popupHouseWidth = popupHouse.clientWidth;
+        console.log(popupHouseWidth);
 
         popupHouse.style.overflow = "auto";
-        // body.style.overflow = "hidden";
+        body.style.overflow = "hidden";
+
+        const currentWidth = window.innerWidth - popupHouseWidth;
+
+        body.style.paddingRight = currentWidth + "px";
+        headerElement.style.paddingRight = currentWidth + "px";
     })
 }
 
@@ -277,7 +301,24 @@ houseClose.addEventListener('click', () => {
     body.style.top = `-${scrollPositon}`;
 
     body.style.overflow = "";
-    popupHouse.style.overflow = "auto";
+    popupHouse.style.overflow = "hidden";
+
+
+    body.style.paddingRight = "0";
+    headerElement.style.paddingRight = "0";
+})
+
+// POPUP 3 popup__appreciation
+const popupAppreciation = document.querySelector('.popup__appreciation');
+const appreciationClose = document.querySelector('.appreciation__close');
+const houseDescrBtn = document.querySelector('.house__descr-btn');
+
+appreciationClose.addEventListener('click', () => {
+    popupAppreciation.classList.remove('appreciation__active');
+})
+
+houseDescrBtn.addEventListener('click', () => {
+    popupAppreciation.classList.add('appreciation__active');
 })
 
 

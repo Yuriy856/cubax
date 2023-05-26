@@ -679,7 +679,107 @@ header {
     line-height: 0;
 }
 
+.popup__appreciation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .32s ease-in;
+}
 
+.appreciation__active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.appreciation__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    background-color: var(--color-white);   
+    width: 100%;
+    height: 710px;
+    padding: 100px 130px;
+    border-radius: 50px;
+    position: relative;
+}
+
+.appreciation__block {
+    position: relative;
+    z-index: 10;
+}
+
+
+.appreciation__title {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: var(--letterSpacing);  
+    max-width: 500px;
+    margin-bottom: 50px;
+}
+
+.appreciation__subtitle {
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: var(--letterSpacing);
+    color: #828282;
+}
+
+.appreciation__close {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    top: 42px;
+    right: 42px;
+    line-height: 0;
+}
+
+.appreciation__btn {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #FF374F;
+    border-radius: 35px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: var(--letterSpacing);
+    padding: 20px 45px;
+    transition: 0.32s ease-in-out;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.appreciation__btn:hover {
+    background-color: rgb(255, 55, 79, 0.5);
+    box-shadow: inset 0 0 20px rgb(0, 0, 0, 0.2);
+    text-shadow: -1px 3px 2px rgb(0, 0, 0, 0.3);
+    color: var(--color-white);
+}
+
+.appreciation__btn span{
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: var(--letterSpacing);
+}
+
+.popup__img1 {
+    position: absolute;
+    bottom: 0;
+    right: 180px;
+    z-index: 1;
+}
+
+.popup__img2 {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+}
 
 
 
@@ -2448,9 +2548,9 @@ header {
 .cubax__question,
 .cubax__callback,
 .footer,
-.technology__bottom,
+.technology__bottom {
 /* .popup, */
-.popup__house {
+/* .popup__house  */
     display: none;
 }
 
@@ -2586,6 +2686,10 @@ header {
         width: 125px;
         transform: rotate(7deg);
     }
+    
+    .house__info {
+        gap: 20px;
+    }
 }
 
 @media (max-width: 1240px) {
@@ -2666,6 +2770,11 @@ header {
         width: 573px;
         transform: rotate(323deg);
     }
+
+    .interior__list,
+    .plans__list {
+        gap: 20px;
+    }
 }
 
 @media (max-width: 1207px) {
@@ -2686,6 +2795,19 @@ header {
 
     .projects__slid-info {
         gap: 20px;
+    }
+
+    .house__info-descr {
+        flex-basis: 300px;
+    }
+
+    .house__info-home {
+        flex-basis: 500px;
+    }
+
+    .popup__img1 {
+        bottom: 0;
+        right: 140px;
     }
 
 }
@@ -2852,6 +2974,43 @@ header {
     .popup__title {
         font-size: 22px;
     }
+
+    .house__descr .house__descr-item {
+        font-size: 18px;
+    }
+
+    .house__descr-sum {
+        font-size: 25px;
+    }
+
+    .popup__img1 {
+        bottom: 0;
+        right: 100px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .house__info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .popup__img1 {
+        bottom: 0;
+        right: 60px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .popup__img1 {
+        display: none;
+    }
+
+    .popup__img2 {
+        right: 0;
+        left: 0;
+        width: 100%;
+        bottom: 20px;
 }
 
 @media (max-width: 960px) {
@@ -2866,7 +3025,11 @@ header {
 
     .projects__slid-info {
         gap: 10px;
-    }    
+    }
+    
+    .house__block {
+        padding: 50px 80px;
+    }
 }
 
 @media (max-width: 920px) {
@@ -2905,6 +3068,27 @@ header {
     }
 }
 
+
+@media (max-width: 800px) {
+    .house__title h2 {
+        font-size: 50px;
+        margin-right: 25px;
+    }
+
+    .house__title span {
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .house__info-home {
+        flex-basis: 400px;
+    }
+
+    .house__info-item {
+        max-width: 250px;
+        padding: 20px 30px;
+    }
+}
 
 
 @media (max-width: 750px) {
@@ -3038,6 +3222,33 @@ header {
     .projects__subtitle {
         font-size: 22px;
     }
+
+    .house__info-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plans__list,
+    .plan__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .house__title h2 {
+        font-size: 50px;
+        margin-right: 25px;
+        margin-bottom: 20px;
+    }
+
+    .appreciation__title {
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+
+    .appreciation__subtitle {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 660px) {
@@ -3049,6 +3260,21 @@ header {
         padding: 20px 20px 42px;
         height: 320px;
         min-width: 250px;
+    }
+
+    .interior__main-link, .interior__link {
+        border-radius: 10px;
+    }
+
+    .house__info-home {
+        flex-basis: 0;
+    }
+
+    .appreciation__content {
+        align-items: center;
+        width: 100%;
+        height: 600px;
+        padding: 60px 80px;
     }
 }
 
@@ -3084,6 +3310,37 @@ header {
         height: 320px;
         min-width: 250px;
     } */
+
+    .house__title h2 {
+        font-size: 40px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+
+    .house__block {
+        padding: 50px 50px;
+    }
+
+    .house__title span {
+        display: block;
+    }
+
+    .appreciation__title {
+        font-size: 40px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .appreciation__subtitle {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .appreciation__content {
+        align-items: center;
+        height: 500px;
+        padding: 50px 70px;
+    }
 }
 
 @media (max-width: 550px) {
@@ -3197,6 +3454,13 @@ header {
         top: 32%;
         right: -44%;
     }
+
+    .plans__title,
+    .interior__title {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 22px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -3301,6 +3565,21 @@ header {
     .btn span {
         font-size: 14px;
     }
+
+    .house__title h2 {
+        font-size: 32px;
+    }
+
+    .appreciation__close {
+        top: 28px;
+        right: 28px;
+    }
+
+    .appreciation__content {
+        height: 400px;
+        padding: 60px 60px 40px;
+        border-radius: 30px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -3319,6 +3598,73 @@ header {
     .popup__close {
         top: 78px;
         right: 140px;
+    }
+
+    .plans__title,
+    .interior__title {
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 22px;
+    }
+
+    .plan__item span  {
+        font-size: 14px;
+    }
+
+    .house__close {
+        top: 28px;
+        right: 28px;
+    }
+
+    .house__title h2 {
+        font-size: 30px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+
+    .house__title span {
+        font-size: 16px;
+    }
+
+    .house__descr .house__descr-item {
+        font-size: 16px;
+    }
+
+    .interior__text {
+        font-size: 14px;
+    }
+
+    .house__info {
+        margin-bottom: 54px;
+    }
+
+    .house__plans {
+        margin-bottom: 60px;
+    }
+
+    .house__info-item {
+        max-width: 220px;
+        padding: 15px 20px;
+    }
+
+    .house__block {
+        padding: 50px 30px;
+        border-radius: 30px;
+    }
+
+    .appreciation__content {
+        height: 350px;
+        padding: 60px 60px 40px;
+        border-radius: 30px;
+    }
+
+    .appreciation__title {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .appreciation__subtitle {
+        font-size: 12px;
     }
 }
 
@@ -3428,18 +3774,41 @@ header {
         font-size: 22px;
     }
 
-    .projects__title {
-        font-size: 22px;
-    }
-
     .projects__subtitle {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .projects__sub-title {
         font-size: 13px;
     }
-}
+
+    .interior__main {
+        margin-bottom: 30px;
+    }
+
+    .house__descr .house__descr-item {
+        font-size: 14px;
+    }
+
+    .house__descr-sum {
+        font-size: 20px;
+    }
+
+    .house__descr-btn {
+        font-size: 12px;
+        padding: 22px 20px;
+    }
+
+    .info-btn {
+        font-size: 14px;
+        padding: 22px 40px;
+    }
+
+    .appreciation__btn {
+        font-size: 14px;
+        padding: 15px 30px;
+    }
+}                                                                   
 
 @media (max-width: 350px) {
     .walls__info-image img {
