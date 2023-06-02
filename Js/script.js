@@ -24,24 +24,26 @@ window.addEventListener('scroll', () => {
  Використовуючи ці значення можна визначити положення та розмір елемента на сторінці.
 */
 
-// const darkBlocks = document.querySelectorAll('._dark');
+const darkBlocks = document.querySelectorAll('._dark');
 
-// window.addEventListener('scroll', function () {
-//     let isIntersecting = false;
-//     for (let i = 0; i < darkBlocks.length; i++) {
-//         if (darkBlocks[i].getBoundingClientRect().bottom >= header.getBoundingClientRect().top
-//             && darkBlocks[i].getBoundingClientRect().top <= header.getBoundingClientRect().bottom) {
-//             isIntersecting = true;
-//             break;
-//         }
-//     }
+window.addEventListener('scroll', function () {
+    let isIntersecting = false;
+    for (let i = 0; i < darkBlocks.length; i++) {
+        if (darkBlocks[i].getBoundingClientRect().bottom >= header.getBoundingClientRect().top
+            && darkBlocks[i].getBoundingClientRect().top <= header.getBoundingClientRect().bottom) {
+            isIntersecting = true;
+            break;
+        }
+    }
 
-//     if (isIntersecting) {
-//         header.classList.add('header--light');
-//     } else {
-//         header.classList.remove('header--light');
-//     }
-// });
+    if (isIntersecting) {
+        header.classList.add('header--light');
+    } else {
+        header.classList.remove('header--light');
+    }
+});    
+
+
 
 
 
@@ -88,30 +90,30 @@ window.addEventListener('resize', () => {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev'
             },
-        
+
             // // Scroll mouse
             // mousewheel: {
             //     sensitivity: 1,
             // },
-        
+
             // Кількість слайдів
             slidesPerView: 1,
-        
+
             // Відстань між слайдами
             spaceBetween: 20,
-        
+
             // Швидкість зміни слайдів
             speed: 400,
-        
+
             // // slidesPerGroup: 2,
-        
+
             // // Індекс слайду для перегляду
             // initialSlide: 1,
-        
+
             // // Центрування слайду
             // centeredSlides: true,
         });
-        
+
     } else {
         new Swiper('.swiper', {
 
@@ -120,13 +122,13 @@ window.addEventListener('resize', () => {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev'
             },
-        
+
             // Кількість слайдів
             slidesPerView: 2,
-        
+
             // Відстань між слайдами
             spaceBetween: 20,
-        
+
             // Швидкість зміни слайдів
             speed: 400,
         });
@@ -273,19 +275,12 @@ for (let i = 0; i < projectsSlidBtn.length; i++) {
         let scrollPositon = window.pageYOffset;
         popupHouse.style.top = `${scrollPositon}px`;
 
-        let popupHouseHeight = popupHouse.clientHeight;
-        // body.style.height = `${popupHouseHeight}px`;
-
-        let bodyTop = -parseInt(scrollPositon)
-        body.style.top = `-${bodyTop}px`;
-        let bodyBottom = -parseInt(popupHouseHeight);
-
-        body.style.bottom = `-${bodyBottom}px`;
-
+        // scroll
         let popupHouseWidth = popupHouse.clientWidth;
-        console.log(popupHouseWidth);
 
-        popupHouse.style.overflow = "auto";
+        popupHouse.style.overflow = "scroll";
+        popupHouse.style.overflowX = "hidden";
+        popupHouse.style.height = "100vh";
         body.style.overflow = "hidden";
 
         const currentWidth = window.innerWidth - popupHouseWidth;
@@ -297,16 +292,19 @@ for (let i = 0; i < projectsSlidBtn.length; i++) {
 
 houseClose.addEventListener('click', () => {
     popupHouse.classList.remove('popup__house-active');
-    let scrollPositon = window.pageYOffset;
-    body.style.top = `-${scrollPositon}`;
 
     body.style.overflow = "";
     popupHouse.style.overflow = "hidden";
 
-
     body.style.paddingRight = "0";
     headerElement.style.paddingRight = "0";
 })
+
+// window.addEventListener('scroll', () => {
+//     console.log(window.pageYOffset);    
+//     console.log(popupHouse.offsetHeight);    
+// })
+
 
 // POPUP 3 popup__appreciation
 const popupAppreciation = document.querySelector('.popup__appreciation');
@@ -397,20 +395,25 @@ burger.addEventListener('click', () => {
 // };
 
 // ladder.up().up().down().showStep().down().showStep();
+let id = Symbol("id");
 
-
-
-
-function sayHi() {
-    console.log("Hello");
+let user = {
+    name: "Rob",
+    [id]: "swiper"
 }
 
-sayHi();
+let clone = Object.assign({}, user)
 
-
-
-
-
-// while (i < 5) {
-//     console.log("Hello");
+// for (let key in user) {
+//     console.log(user[key]);
 // }
+
+let num1 = Symbol.for('age');
+
+let num2 = Symbol.for('age');
+
+console.log(Reflect.ownKeys(user));
+
+
+
+

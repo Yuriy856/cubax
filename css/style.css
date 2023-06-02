@@ -1077,7 +1077,6 @@ header {
 
 /* cudax__advantages */
 
-.cudax__advantages {}
 
 .advantages__list {
     display: flex;
@@ -1627,6 +1626,7 @@ header {
     overflow: hidden;
     max-height: 336px;
     transition: .32s ease-in-out;
+    line-height: 0;
 }
 
 .equipment__img img {
@@ -2318,9 +2318,6 @@ header {
     transform: translate(-50%, -50%);
 }
 
-.callback__title {
-
-}
 
 .callback__title span{
     font-weight: 600;
@@ -2540,17 +2537,13 @@ header {
 }
 
 
-
-.cubax__equipment,
-.cubax__benefits,
-.cubax__stages,
 .cudax__warranty,
 .cubax__question,
 .cubax__callback,
 .footer,
+/* .popup__house,
+.popup, */
 .technology__bottom {
-/* .popup, */
-/* .popup__house  */
     display: none;
 }
 
@@ -2690,6 +2683,38 @@ header {
     .house__info {
         gap: 20px;
     }
+
+    .stages__item.stages__item--1::after {
+        top: -24%;
+        left: 82%;
+        height: 17%;
+        width: 55%;
+    }
+
+    .stages__item.stages__item--2::after {
+        top: 6%;
+        left: 96%;
+        height: 7%;
+        width: 50%;
+        transform: rotate(14deg);
+    }
+
+    .stages__item.stages__item--3::after {
+        top: 21%;
+        left: 109%;
+        height: 9%;
+        width: 58%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .stages__item.stages__item--2::after {
+        top: 6%;
+        left: 106%;
+        height: 7%;
+        width: 25%;
+        transform: rotate(24deg);
+    }
 }
 
 @media (max-width: 1240px) {
@@ -2774,6 +2799,29 @@ header {
     .interior__list,
     .plans__list {
         gap: 20px;
+    }
+
+    .stages__item.stages__item--1::after {
+        top: -24%;
+        left: 82%;
+        height: 17%;
+        width: 32%;
+    }
+
+    .stages__item.stages__item--2::after {
+        top: 6%;
+        left: 95%;
+        height: 7%;
+        width: 25%;
+        transform: rotate(24deg);
+    }
+
+    .stages__item.stages__item--3::after {
+        top: 21%;
+        left: 109%;
+        height: 9%;
+        width: 29%;
+        transform: rotate(24deg);
     }
 }
 
@@ -2987,6 +3035,71 @@ header {
         bottom: 0;
         right: 100px;
     }
+
+    .benefits__body {
+        display: grid;
+        gap: 20px 20px;
+        grid-template-columns: repeat(2, 365px);
+        justify-content: center;
+    }
+
+    .stages__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .stages__item--1, .stages__item--4 {
+        margin-top: 0;
+    }
+
+    .stages__item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        max-width: 545px;
+        position: relative;
+    }
+
+    .stages__image {
+        min-width: 167px;
+        height: 167px;
+    }
+
+
+    .stages__item.stages__item--1::after {
+        top: 89%;
+        left: -19%;
+        height: 17%;
+        width: 32%;
+        transform: rotate(289deg);
+    }
+
+    .stages__item.stages__item--2::after {
+        top: 104%;
+        left: -17%;
+        height: 7%;
+        width: 26%;
+        transform: rotate(274deg);
+    }
+
+    .stages__item.stages__item--3::after {
+        top: 91%;
+        left: -11%;
+        height: 18%;
+        width: 17%;
+        transform: rotate(253deg);
+    }
+
+    .stages__round {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
 }
 
 @media (max-width: 1050px) {
@@ -3011,6 +3124,7 @@ header {
         left: 0;
         width: 100%;
         bottom: 20px;
+    }
 }
 
 @media (max-width: 960px) {
@@ -3066,6 +3180,10 @@ header {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    .equipment__section {
+        margin-bottom: 55px;
+    }
 }
 
 
@@ -3087,6 +3205,13 @@ header {
     .house__info-item {
         max-width: 250px;
         padding: 20px 30px;
+    }
+
+    .benefits__body {
+        display: grid;
+        gap: 20px 20px;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
     }
 }
 
@@ -3249,6 +3374,55 @@ header {
     .appreciation__subtitle {
         font-size: 14px;
     }
+
+    .cubax__equipment {
+        padding: 70px 0;
+    }
+
+    .equipment__title {
+        font-size: 35px;
+    }
+
+    .equipment__img {
+        border-radius: 20px;
+    }
+
+    .equipment__signature {
+        font-size: 22px;
+    }
+
+    .benefits__title {
+        font-size: 35px;
+        margin-bottom: 35px;
+    }
+
+    .benefits__subtitle {
+        font-size: 22px;
+    }
+
+    .stages__title {
+        font-size: 35px;
+        margin-bottom: 35px;
+    }
+
+    .round__title {
+        font-size: 35px;
+    }
+
+    .round__block {
+        width: 527px;
+        height: 527px;
+    }
+
+    .round__block::after {
+        width: 570px;
+        height: 570px;
+    }
+
+    .round__cover {
+        width: 710px;
+        height: 710px;
+    }
 }
 
 @media (max-width: 660px) {
@@ -3276,6 +3450,60 @@ header {
         height: 600px;
         padding: 60px 80px;
     }
+
+    .equipment__list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: space-between;
+    }
+
+    .stages__item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        max-width: 445px;
+        position: relative;
+    }
+
+    .stages__image {
+        min-width: 127px;
+        height: 127px;
+    }
+
+    .stages__image img {
+        width: 45%;
+    }
+
+    .stages__image::before {
+        top: 98px;
+        right: 4px;
+    }
+
+    .stages__item.stages__item--1::after {
+        top: 103%;
+        left: -19%;
+        height: 17%;
+        width: 32%;
+        transform: rotate(288deg);
+    }
+
+    .stages__item.stages__item--2::after {
+        top: 108%;
+        left: -17%;
+        height: 9%;
+        width: 27%;
+        transform: rotate(280deg);
+    }
+
+    .stages__item.stages__item--3::after {
+        top: 91%;
+        left: -9%;
+        height: 18%;
+        width: 17%;
+        transform: rotate(253deg);
+    }
 }
 
 @media (max-width: 632px) {
@@ -3284,9 +3512,6 @@ header {
         text-align: center;
     }
 
-    .advantages__list {
-
-    }
 
     .advantages__list-item {
         max-width: 230px;
@@ -3301,16 +3526,6 @@ header {
 }
 
 @media (max-width: 560px) {
-    /* .projects__slid img {
-        max-width: 200px;
-    }
-
-    .projects__slid {
-        padding: 20px 20px 42px;
-        height: 320px;
-        min-width: 250px;
-    } */
-
     .house__title h2 {
         font-size: 40px;
         margin-right: 15px;
@@ -3340,6 +3555,15 @@ header {
         align-items: center;
         height: 500px;
         padding: 50px 70px;
+    }
+
+    .benefits__body {
+        grid-template-columns: repeat(1, 365px);
+        justify-content: center;
+    }
+
+    .cubax__benefits {
+        padding: 70px 0;
     }
 }
 
@@ -3461,6 +3685,79 @@ header {
         font-size: 30px;
         margin-bottom: 22px;
     }
+
+    .benefits__title {
+        font-size: 30px;
+    }
+
+    .stages__title {
+        font-size: 30px;
+        margin-bottom: 35px;
+    }
+
+    .stages__item {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        gap: 20px;
+        max-width: 345px;
+    }
+
+    .stages__info {
+        text-align: left;
+    }
+
+    .round__title {
+        font-size: 22px;
+        margin-bottom: 85px;
+    }
+
+    .round__btn {
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: var(--letterSpacing);
+        color: var(--color-white);
+        padding: 20px 15px;
+    }
+
+    .round__cover {
+        width: 610px;
+        height: 610px;
+    }
+
+    .round__block::after {
+        width: 470px;
+        height: 470px;
+    }
+
+    .round__block {
+        width: 427px;
+        height: 427px;
+    }
+
+    .stages__item.stages__item--1::after {
+        top: 80%;
+        left: -19%;
+        height: 17%;
+        width: 31%;
+        transform: rotate(298deg);
+    }
+
+    .stages__item.stages__item--2::after {
+        top: 108%;
+        left: -17%;
+        height: 9%;
+        width: 27%;
+        transform: rotate(283deg);
+    }
+
+    .stages__item.stages__item--3::after {
+        top: 91%;
+        left: -8%;
+        height: 18%;
+        width: 17%;
+        transform: rotate(261deg);
+    }
 }
 
 @media (max-width: 450px) {
@@ -3580,6 +3877,64 @@ header {
         padding: 60px 60px 40px;
         border-radius: 30px;
     }
+
+    .equipment__title {
+        font-size: 25px;
+    }
+
+    .equipment__signature {
+        font-size: 20px;
+    }
+
+    .benefits__title {
+        font-size: 25px;
+    }
+
+    .benefits__subtitle {
+        font-size: 20px;
+    }
+
+    .stages__title {
+        font-size: 25px;
+        margin-bottom: 35px;
+    }
+
+    .stages__descr {
+        margin-bottom: 50px;
+        line-height: 2;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 410px) {
+    .benefits__body {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    .stages__item.stages__item--1::after {
+        top: 105%;
+        left: -11%;
+        height: 14%;
+        width: 31%;
+        transform: rotate(298deg);
+    }
+
+    .stages__item.stages__item--2::after {
+        top: 111%;
+        left: -9%;
+        height: 7%;
+        width: 27%;
+        transform: rotate(283deg);
+    }
+
+    .stages__item.stages__item--3::after {
+        top: 89%;
+        left: -2%;
+        height: 17%;
+        width: 17%;
+        transform: rotate(261deg);
+    }
 }
 
 @media (max-width: 400px) {
@@ -3665,6 +4020,26 @@ header {
 
     .appreciation__subtitle {
         font-size: 12px;
+    }
+
+    .stages__info-title {
+        font-size: 14px;
+    }
+
+    .stages__info-text {
+        font-size: 14px;
+    }
+
+    .cubax__stages {
+        padding: 60px 0 70px;
+    }
+
+    .stages__item.stages__item--1::after {
+        top: 100%;
+        left: -11%;
+        height: 14%;
+        width: 31%;
+        transform: rotate(298deg);
     }
 }
 
@@ -3808,6 +4183,33 @@ header {
         font-size: 14px;
         padding: 15px 30px;
     }
+
+    .benefits__descr {
+        line-height: 1.7;
+        font-size: 14px;
+    }
+
+    .benefits__item span {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 1.57;
+    }
+
+    .stages__item.stages__item--1::after {
+        top: 98%;
+        left: -11%;
+        height: 14%;
+        width: 31%;
+        transform: rotate(298deg);
+    }
+
+    .stages__item.stages__item--2::after {
+        top: 114%;
+        left: -10%;
+        height: 7%;
+        width: 27%;
+        transform: rotate(283deg);
+    }
 }                                                                   
 
 @media (max-width: 350px) {
@@ -3882,5 +4284,4 @@ header {
     .header__mobile {
         gap: 10px;
     }
-
 }
