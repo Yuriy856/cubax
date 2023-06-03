@@ -2022,7 +2022,6 @@ header {
 .warranty__block {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .warranty__info {
@@ -2057,8 +2056,8 @@ header {
 
 .warranty__image {
     position: relative;
-    width: 863px;
-    height: 599px;
+    max-width: 863px;
+    max-height: 599px;
     animation: technologyHome 4s infinite ease-in-out;
 }
 
@@ -2069,9 +2068,9 @@ header {
 
 .warranty__image .warranty__cloud {
     position: absolute;
-    top: 342px;
-    left: -246px;
-    width: 140%;
+    top: 360px;
+    left: -106px;
+    width: 110%;
     animation: 3.5s ease-in-out 0s infinite normal none running homeClouds;
 }
 
@@ -2140,6 +2139,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .question__list {
@@ -2166,7 +2167,7 @@ header {
 }
 
 .question__button .button__item {
-    width: 54px;
+    min-width: 54px;
     height: 54px;
     background-color: #4899B9;
     border-radius: 50%;
@@ -2211,6 +2212,7 @@ header {
 }
 
 .question__button span {
+    text-align: left;
     font-weight: 600;
     font-size: 16px;
     color: var(--color-white);
@@ -2536,11 +2538,6 @@ header {
     color: #828282;
 }
 
-
-.cudax__warranty,
-.cubax__question,
-.cubax__callback,
-.footer,
 /* .popup__house,
 .popup, */
 .technology__bottom {
@@ -2593,6 +2590,15 @@ header {
         transform: rotate(4deg);
     }
 
+}
+
+@media (max-width: 1540px) {
+    .warranty__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px 20px;
+    }
 }
 
 
@@ -2651,6 +2657,21 @@ header {
     .projects__slid {
         min-width: 420px;
     }
+
+    .warranty__image {
+        max-width: 763px;
+        max-height: 499px;
+    }
+
+    .warranty__image .warranty__cloud {
+        top: 319px;
+        left: -106px;
+        width: 110%;
+    }
+
+    .warranty__list {
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 1320px)  {
@@ -2704,6 +2725,21 @@ header {
         left: 109%;
         height: 9%;
         width: 58%;
+    }
+
+    .warranty__image {
+        max-width: 663px;
+        max-height: 399px;
+    }
+
+    .warranty__image .warranty__cloud {
+        top: 280px;
+        left: -106px;
+        width: 110%;
+    }
+
+    .warranty__list {
+        margin-top: 40px;
     }
 }
 
@@ -2858,6 +2894,23 @@ header {
         right: 140px;
     }
 
+}
+
+@media (max-width: 1150px) {
+    .warranty__image {
+        max-width: 563px;
+        max-height: 299px;
+    }
+
+    .warranty__image .warranty__cloud {
+        top: 236px;
+        left: -82px;
+        width: 110%;
+    }
+
+    .warranty__list {
+        margin-top: 40px;
+    }
 }
 
 
@@ -3100,6 +3153,29 @@ header {
         justify-content: center;
         margin-top: 50px;
     }
+
+    .warranty__block {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .warranty__image {
+        position: absolute;
+        top: 218px;
+        max-width: 563px;
+        max-height: 299px;
+    }
+
+    .warranty__info {
+        z-index: 1;
+        text-align: center;
+        flex-basis: 600px;
+    }
+
+    .warranty__subtitle {
+        margin-top: 295px;
+    }
 }
 
 @media (max-width: 1050px) {
@@ -3112,9 +3188,7 @@ header {
         bottom: 0;
         right: 60px;
     }
-}
 
-@media (max-width: 1050px) {
     .popup__img1 {
         display: none;
     }
@@ -3124,6 +3198,21 @@ header {
         left: 0;
         width: 100%;
         bottom: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .warranty__image .warranty__cloud {
+        top: 236px;
+        left: -67px;
+        width: 110%;
+    }
+
+    .warranty__image {
+        position: absolute;
+        top: 39%;
+        max-width: 563px;
+        max-height: 299px;
     }
 }
 
@@ -3143,6 +3232,27 @@ header {
     
     .house__block {
         padding: 50px 80px;
+    }
+
+    .callback__content .callback__img-1,
+    .callback__content .callback__img-2 {
+        display: none;
+    }
+
+    .callback__content .callback__img-3 {
+        top: -30%;
+        right: -2%;
+    }
+
+    .callback__content .callback__img-4 {
+        bottom: -29%;
+        left: -1%;
+    }
+
+    .scroll__up {
+        position: absolute;
+        right: 0;
+        top: 95%;
     }
 }
 
@@ -3183,6 +3293,21 @@ header {
 
     .equipment__section {
         margin-bottom: 55px;
+    }
+
+    .warranty__image {
+        position: absolute;
+        top: 39%;
+        max-width: 563px;
+        max-height: 299px;
+    }
+
+    .warranty__item {
+        gap: 25px;
+        border-radius: 30px;
+        max-width: 300px;
+        padding: 40px 30px;
+        text-align: left;
     }
 }
 
@@ -3423,6 +3548,69 @@ header {
         width: 710px;
         height: 710px;
     }
+
+    .warranty__title {
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+
+    .warranty__info {
+        z-index: 1;
+        text-align: center;
+        flex-basis: 400px;
+    }
+
+    .warranty__image {
+        position: absolute;
+        top: 44%;
+        max-width: 563px;
+        max-height: 299px;
+    }
+
+    .question__title {
+        font-size: 35px;
+        margin-bottom: 57px;
+    }
+
+    .callback__title {
+        font-size: 30px;
+    }
+
+    .callback__info-block {
+        width: 527px;
+        height: 527px;
+        padding: 90px 60px;
+        animation: none;
+    }
+
+    .callback__info-block::after {
+        width: 570px;
+        height: 570px;
+    }
+
+    .callback__content .callback__img-4 {
+        bottom: -55%;
+        left: -1%;
+    }
+
+    .callback__content .callback__img-3 {
+        top: -36%;
+        right: 0%;
+    }
+
+    .callback__info-block .callback__cover {
+        width: 610px;
+        height: 610px;
+    }
+}
+
+@media (max-width: 670px) {
+    .warranty__item {
+        gap: 20px;
+        border-radius: 20px;
+        max-width: 250px;
+        padding: 30px 20px;
+    }
 }
 
 @media (max-width: 660px) {
@@ -3504,6 +3692,10 @@ header {
         width: 17%;
         transform: rotate(253deg);
     }
+
+    .callback__info-block .callback__cover {
+        display: none;
+    }
 }
 
 @media (max-width: 632px) {
@@ -3523,6 +3715,56 @@ header {
         margin-bottom: 10px;
     }
 
+    .question__block {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .callback__info-block {
+        width: 427px;
+        height: 427px;
+        padding: 95px 60px;
+        animation: none;
+    }
+
+    .callback__info-block::after {
+        width: 470px;
+        height: 470px;
+    }
+
+    .callback__title {
+        font-size: 20px;
+    }
+
+    .callback__button {
+        padding: 15px 30px;
+    }
+    .callback__button span {
+        font-size: 14px;
+    }
+
+    .callback__content .callback__img-3 {
+        width: 300px;
+        top: -42%;
+        right: 0%;
+    }
+
+    .callback__content .callback__img-4 {
+        width: 300px;
+        bottom: -56%;
+        left: 20%;
+    }
+
+    .cubax__callback {
+        padding: 200px 0 95px;
+        height: 950px;
+    }
+}
+
+@media (max-width: 600px) {
 }
 
 @media (max-width: 560px) {
@@ -3564,6 +3806,27 @@ header {
 
     .cubax__benefits {
         padding: 70px 0;
+    }
+
+    .warranty__image .warranty__cloud {
+        top: 185px;
+        left: -36px;
+        width: 110%;
+    }
+
+    .warranty__item {
+        gap: 20px;
+        flex-direction: column;
+        border-radius: 20px;
+        max-width: 200px;
+        padding: 30px 20px;
+    }
+
+    .warranty__image {
+        position: absolute;
+        top: 44%;
+        max-width: 463px;
+        max-height: 199px;
     }
 }
 
@@ -3758,6 +4021,83 @@ header {
         width: 17%;
         transform: rotate(261deg);
     }
+
+    .warranty__title {
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+
+    .warranty__info-text {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .warranty__subtitle {
+        font-size: 20px;
+    }
+
+    .question__title {
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+
+    .question__button span {
+        font-size: 15px;
+    }
+
+    .callback__info-block {
+        max-width: 357px;
+        max-height: 357px;
+        padding: 44px 60px;
+        animation: none;
+    }
+
+    .callback__info-block::after {
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    .callback__button {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 460px) {
+    .warranty__item {
+        gap: 20px;
+        flex-direction: column;
+        border-radius: 20px;
+        max-width: 150px;
+        padding: 30px 20px;
+    }
+
+    .warranty__info {
+        z-index: 1;
+        text-align: center;
+        flex-basis: 300px;
+    }
+    
+    .warranty__image {
+        position: absolute;
+        top: 53%;
+        max-width: 363px;
+        max-height: 199px;
+    }
+
+    .warranty__subtitle {
+        margin-top: 215px;
+    }
+
+    .warranty__image .warranty__cloud {
+        top: 145px;
+        left: -36px;
+        width: 110%;
+    }
+
+    .warranty__title {
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -3904,6 +4244,72 @@ header {
         line-height: 2;
         font-size: 14px;
     }
+
+    .question__title {
+        font-size: 25px;
+        margin-bottom: 50px;
+    }
+
+    .cubax__callback {
+        padding: 200px 0 95px;
+        height: 840px;
+    }
+
+    .callback__content .callback__img-4 {
+        width: 300px;
+        bottom: -56%;
+        left: 0%;
+    }
+}
+
+@media (max-width: 440px) {
+    .callback__info-block {
+        max-width: 257px;
+        max-height: 257px;
+        padding: 63px 25px;
+        animation: none;
+    }
+
+    .callback__info-block::after {
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .callback__title {
+        font-size: 14px;
+    }
+
+    .callback__button {
+        padding: 15px 10px;
+    }
+
+    .cubax__callback {
+        padding: 200px 0 95px;
+        height: 780px;
+    }
+
+    .callback__content .callback__img-3 {
+        width: 300px;
+        top: -66%;
+        right: 0%;
+    }
+
+    .callback__content .callback__img-4 {
+        width: 300px;
+        bottom: -72%;
+        left: 0%;
+    }
+
+    .footer__body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer {
+        margin-top: -100px;
+    }
 }
 
 @media (max-width: 410px) {
@@ -4040,6 +4446,35 @@ header {
         height: 14%;
         width: 31%;
         transform: rotate(298deg);
+    }
+
+    .cudax__warranty {
+        padding: 60px 0;
+    }
+
+    .cubax__question {
+        padding: 60px 0;
+    }
+
+    
+    .scroll__up {
+        position: absolute;
+        right: -6%;
+        top: 95%;
+    }
+
+    .callback__content .callback__img-4 {
+        width: 300px;
+        bottom: -83%;
+        left: 0%;
+    }
+}
+
+@media (max-width: 370px) {
+    .warranty__image .warranty__cloud {
+        top: 130px;
+        left: -36px;
+        width: 110%;
     }
 }
 
@@ -4210,6 +4645,34 @@ header {
         width: 27%;
         transform: rotate(283deg);
     }
+
+    .warranty__image .warranty__cloud {
+        top: 129px;
+        left: -36px;
+        width: 110%;
+    }
+
+    .warranty__item img {
+        width: 40px;
+    }
+
+    .warranty__item-text p {
+        font-size: 12px;
+    }
+
+    .warranty__item {
+        gap: 20px;
+        flex-direction: column;
+        border-radius: 20px;
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+
+    .callback__content .callback__img-4 {
+        width: 300px;
+        bottom: -83%;
+        left: -16%;
+    }
 }                                                                   
 
 @media (max-width: 350px) {
@@ -4283,5 +4746,11 @@ header {
 
     .header__mobile {
         gap: 10px;
+    }
+
+    .warranty__image .warranty__cloud {
+        top: 116px;
+        left: -36px;
+        width: 110%;
     }
 }
